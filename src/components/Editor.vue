@@ -38,6 +38,7 @@
     methods: {
       codeChange(newCode) {
         this.code = newCode
+        this.$store.commit('SET_SECRIPT', newCode)
       },
       runcode() {
         this.$store.dispatch({

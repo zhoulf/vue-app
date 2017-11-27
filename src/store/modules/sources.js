@@ -3,7 +3,8 @@ import * as service from '../service'
 
 export default {
     state: {
-        result: '123'
+        result: '123',
+        script: ''
     },
     getters: {
         doneCode(state, getters, rootState) {
@@ -13,6 +14,9 @@ export default {
     mutations: {
         [types.RUN_CODE](state, res) {
             state.result = res.data;
+        },
+        [types.SET_SECRIPT](state, code) {
+            state.script = code;
         }
     },
     actions: {

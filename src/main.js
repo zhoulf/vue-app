@@ -6,10 +6,10 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 
-import MuseUI from 'muse-ui'
-import 'muse-ui/dist/muse-ui.css'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-Vue.use(MuseUI)
+Vue.use(Element)
 
 Vue.config.productionTip = false
 

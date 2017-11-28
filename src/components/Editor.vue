@@ -7,7 +7,7 @@
         ref="codeEditor"
         @change="codeChange">
       </codemirror> 
-       <mu-flat-button label="submit" @click="runcode()" class="demo-flat-button"/>
+       <el-button type="success" @click="runcode()">成功按钮</el-button>
     </div>
     <pre class="e-code">{{ code }}</pre>
     <div>{{result}}</div>

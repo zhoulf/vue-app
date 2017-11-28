@@ -21,8 +21,7 @@ export default {
     },
     actions: {
         async [types.RUN_CODE]({ commit, state }, payload) {
-           let res = await service.execScript(payload.code);
-           console.log(res);
+           let res = await service.execScript(state.script);
             if (res.data.success) {
                 commit(types.RUN_CODE, res.data.data);
             }

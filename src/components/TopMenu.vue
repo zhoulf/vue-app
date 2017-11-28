@@ -1,15 +1,28 @@
 <template>
 <div class="container">
-  <mu-flat-button label="Default" class="demo-flat-button"/>
-  <mu-flat-button label="Primary" class="demo-flat-button" primary/>
-  <mu-flat-button label="Secondary" class="demo-flat-button" secondary/>
-  <mu-flat-button label="Disabled" class="demo-flat-button" disabled/>
+  <div v-for="item in list" :key="item.id">
+    {{ item.label }}
+  </div>
+  <!-- <el-tabs type="border-card">
+    <el-tab-pane v-for="item in list" :key="item.id" label="{{item.label}}">
+      {{item.label}}
+    </el-tab-pane>
+  </el-tabs> -->
 </div>
 </template>
 
 <script>
+
 export default {
-  name: 'TopMenu'
+  name: 'TopMenu',
+  computed: {
+    list() {
+      return this.$store.state.menu.menus
+    }
+  },
+  created() {
+    this.$store.dispatch('GET_MEMUS')
+  }
 }
 </script>
 

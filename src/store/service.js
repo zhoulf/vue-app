@@ -6,6 +6,10 @@ import axios from 'axios'
  */
 
 export const execScript = code => {
-    console.log(code);
-   return axios.get('/src/api/mock.json');
+    console.log(code)
+    return axios.get('/src/api/mock.json')
+}
+
+export const getMemus = () => {
+    return axios.get('/src/api/menu.json')
 }

@@ -1,17 +1,15 @@
 <template>
 <div class="container">
-  <div v-for="item in list" :key="item.id">
-    {{ item.label }}
-  </div>
-  <!-- <el-tabs type="border-card">
-    <el-tab-pane v-for="item in list" :key="item.id" label="{{item.label}}">
-      {{item.label}}
+  <el-tabs type="border-card">
+    <el-tab-pane v-for="item in list" :key="item.id" :label="item.label">
+      <Editor></Editor>
     </el-tab-pane>
-  </el-tabs> -->
+  </el-tabs>
 </div>
 </template>
 
 <script>
+import Editor from './Editor'
 
 export default {
   name: 'TopMenu',
@@ -22,6 +20,9 @@ export default {
   },
   created() {
     this.$store.dispatch('GET_MEMUS')
+  },
+  compontents: {
+    Editor
   }
 }
 </script>
